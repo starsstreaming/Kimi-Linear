@@ -1,0 +1,5 @@
+* text=auto eol=lf
+# 原始资料与图像按字节保留，防止 Windows 换行转换破坏来源哈希。
+materials/original/** -text
+materials/assets/** -text
+materials/official-model-config.json -text

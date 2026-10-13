@@ -24,19 +24,19 @@ Kimi Team · Moonshot AI  arXiv:2510.26692  2025-10  开源：KDA kernel + vLLM 
 
 **为什么它值得关注？** 过去所有线性注意力论文的叙事都是「我们牺牲一点点精度，换来巨大的效率提升」。这篇论文反过来了： **在 1.4T token 的严格公平对比下，它不但更快更省，还更准**（MMLU-Pro 51.0 vs 47.2，RULER 84.3 vs 81.3）。 这是「线性注意力第一次赢下全注意力」的标志性结果，所以它被称为 2026 年注意力方向最出名的论文之一。
 
-**痛点：全注意力的两个天花板** 
+**痛点：全注意力的两个天花板**
 
 KV cache  随上下文线性膨胀，注意力计算随上下文二次增长——Agent 时代动辄百万 token 的输入让这两件事变得不可接受。
 
-**旧方案：线性注意力省资源，但"记性差"** 
+**旧方案：线性注意力省资源，但"记性差"**
 
 它把注意力改写成固定大小的循环状态，代价是精确检索能力差（抄写、召回任务吃力）。
 
-**本文方案：KDA + 3:1 混合** 
+**本文方案：KDA + 3:1 混合**
 
 KDA（Kimi Delta Attention）给线性注意力装上「细粒度遗忘门 + Δ 规则修正」两件武器， 再每隔 3 层插 1 层全注意力兜底全局检索。
 
-**验证：从合成任务到 48B 模型** 
+**验证：从合成任务到 48B 模型**
 
 合成任务拆解机制 → scaling law 验证可扩展性 → 1.4T/5.7T token 预训练 + SFT + RL 全流程对比。
 
@@ -368,7 +368,7 @@ return self.wo(o), g
 
 ## 07 诚实的结论：复现验证了什么、没验证什么
 
-**✔ 复现确认的** 
+**✔ 复现确认的**
 
 - 分块并行算法与循环形式**严格等价**（~1e-15），KDA/GDN/GLA/Mamba2 四变体统一实现正确
 
@@ -380,7 +380,7 @@ return self.wo(o), g
 
 - 细粒度门控在 MQAR 大上下文下的优势 + 通道级分化记忆（图 C3）
 
-**△ 复现未能覆盖的** 
+**△ 复现未能覆盖的**
 
 - **规模差距**：玩具模型上 GDN≈KDA，"细粒度门控显著优于标量门控"要 653M+ 才拉开——我们验证的是机制，不是 48B 的最终数字
 
@@ -396,19 +396,19 @@ return self.wo(o), g
 
 ## 08 扩展学习路线：顺着这篇论文往上爬
 
-**先修：把"祖先论文"读掉（按序）** 
+**先修：把"祖先论文"读掉（按序）**
 
 ①  Attention Is All You Need （2017）—— 全注意力的原点； ②  Transformers are RNNs / Linear Transformers （Katharopoulos 2020）—— 线性注意力与"草稿本"视角； ③  Parallelizing Linear Transformers with the Delta Rule （Yang 2024, NeurIPS）—— Δ 规则的 chunkwise 并行，KDA 的算法骨架； ④  Gated Delta Networks （Yang, Kautz, Hatamizadeh, ICLR 2025）—— 加遗忘门，KDA 的直接前身。
 
-**动手：跑官方开源栈** 
+**动手：跑官方开源栈**
 
 论文全量开源：`github.com/MoonshotAI/Kimi-Linear`（配置与权重）、 `github.com/fla-org/flash-linear-attention` 的 `fla/ops/kda`（Triton kernel：chunk / fused_recurrent 两模式， 与我们复现的数学一一对应）、HuggingFace `moonshotai/Kimi-Linear-48B-A3B-Instruct`， vLLM 集成开箱即用。把本文复现代码里的 `kda_chunkwise` 与官方 Triton kernel 对照读，收获最大。
 
-**对照：横向看竞争路线** 
+**对照：横向看竞争路线**
 
 稀疏路线： MoBA （块级路由）、 NSA （DeepSeek 稀疏注意力）、 DSA （DeepSeek-V3.2 token 级索引）； 线性路线： RWKV-7 （广义 Δ 规则）、 Comba 、 Log-Linear Attention （ICLR 2026，对数-线性插值）； 混合路线： Falcon-H1 、 MiniCPM-SALA 、 NHA 。论文 §7 的两张表（Table 6/7）就是最好的路线图。
 
-**进阶：三个开放问题** 
+**进阶：三个开放问题**
 
 ① Δ 规则的状态容量极限在哪？（关联记忆理论 + state expansion 方向） ② 线性 + 稀疏**混合**（而非二选一）的上限——论文明确说这是未来方向； ③ 细粒度门控与硬件的协同：逐通道衰减如何在更低精度（fp8）下保持稳定？
 

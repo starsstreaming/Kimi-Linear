@@ -105,4 +105,3 @@ class MixerLayer(nn.Module):
         o = o * torch.sigmoid(self.g_up(self.g_down(x)))   # Sigmoid 输出门（缓解 attention sink）
         return self.wo(o), g
 ```
-
