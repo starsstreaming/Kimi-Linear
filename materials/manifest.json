@@ -102,8 +102,8 @@
     },
     {
       "path": "materials/official-model-revision.json",
-      "bytes": 298,
-      "sha256": "068a61b23fe8be1fcb2b8e1d5f0798d6baf3b677495873a3a1722db5f2117997"
+      "bytes": 292,
+      "sha256": "eeac7cf0545d1c024cf45ad9d07beec4f169f905c2316a293dfdc48e511397a7"
     }
   ],
   "mira_download_status": "updated share MD and PDF successfully archived"
