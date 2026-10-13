@@ -1,0 +1,110 @@
+{
+  "captured_on": "2026-10-13",
+  "original_html": {
+    "path": "materials/original/kimi-linear-reading-reproduction.html",
+    "sha256": "cb83c21cddfed0f47402ea5497ce0620c0ab827a97016ef6b0a977e25901baf6",
+    "bytes": 1747711
+  },
+  "images": [
+    {
+      "path": "materials/assets/figure-01.png",
+      "caption": "Figure 1",
+      "sha256": "c6e0bff78794431820172268f1d531d94693daa3dd346cb9d43585c9fd13878a"
+    },
+    {
+      "path": "materials/assets/figure-02.png",
+      "caption": "Figure 3",
+      "sha256": "00ce00dd588e7daf773420b573976379456871dc7cd31b80b8523ba23f0aef83"
+    },
+    {
+      "path": "materials/assets/figure-03.png",
+      "caption": "等价性验证",
+      "sha256": "ab836d81385b64b37cb57508d9038c2adb2501659aa211cf0c99416056d3f006"
+    },
+    {
+      "path": "materials/assets/figure-04.png",
+      "caption": "gamma 爆炸",
+      "sha256": "80396849a33484e2dc99c602c29d84c8d69f65269610d307a941b7ce5d4470ff"
+    },
+    {
+      "path": "materials/assets/figure-05.png",
+      "caption": "论文 Figure 2",
+      "sha256": "1c5c5e7b1baa9f3937fa56c56b468981fde3fc14c1a9c3fca14760114d6a5453"
+    },
+    {
+      "path": "materials/assets/figure-06.png",
+      "caption": "复现 Figure 2",
+      "sha256": "7a0738eec5cc06ddd8970da76200328a3905d7bbfc1565655526523055d99d05"
+    },
+    {
+      "path": "materials/assets/figure-07.png",
+      "caption": "FLOPs 理论曲线",
+      "sha256": "f129bc02030481c497bdb46ebed961ce1fcd4ea5d0c3515a6dfaf15a2d9615bf"
+    },
+    {
+      "path": "materials/assets/figure-08.png",
+      "caption": "论文 Figure 4",
+      "sha256": "91bd918aa34dbebdaf5c24065dff390e80da3850e635a3a024b6670a76411460"
+    },
+    {
+      "path": "materials/assets/figure-09.png",
+      "caption": "复现 MQAR",
+      "sha256": "666381af5f79ad84670e516dad06e9ca02db217734400699edc0542bbf118bc7"
+    },
+    {
+      "path": "materials/assets/figure-10.png",
+      "caption": "多种子",
+      "sha256": "054de5ee8a6ce1c54218707efef1b2e6270c585198b586d5013dc4aca038ea05"
+    },
+    {
+      "path": "materials/assets/figure-11.png",
+      "caption": "学到的门控",
+      "sha256": "778580bccaffd66b3fd96aa25fe43b009df29b7069707356dd22a3c9abe5cfe0"
+    },
+    {
+      "path": "materials/assets/figure-12.png",
+      "caption": "论文 Figure 7",
+      "sha256": "55e27bfd00ee2c79f6da20ed640774260267bdf66c51a0b4dee997696b9287ca"
+    },
+    {
+      "path": "materials/assets/figure-13.png",
+      "caption": "复现 Figure 7",
+      "sha256": "2bd1544af37d30eaabf5058f1fb3a079ed9ffd9e248ad1853023f77bf37be7a2"
+    },
+    {
+      "path": "materials/assets/figure-14.png",
+      "caption": "KV cache 占用",
+      "sha256": "fef1024037c91a152f197fab5e231a27cb84fe6b67ea2b28399b9220d299286b"
+    },
+    {
+      "path": "materials/assets/figure-15.png",
+      "caption": "Figure 5",
+      "sha256": "2e09ab48e4e06bb8bdd2e075b0e48855c92b43f5b9e45f6fcae941dea69d4ab0"
+    }
+  ],
+  "mira_initial_share": "https://mira.deepprinciple.com/share/sessions/j3s1TGeF",
+  "mira_updated_share": "https://mira.deepprinciple.com/share/sessions/E3CW47cG",
+  "additional_sources": [
+    {
+      "path": "materials/original/mira-research-report.md",
+      "bytes": 32277,
+      "sha256": "64a42867617fa3f8d9638cb08dc78318c883f6fe500065f5472609dfa8704ab0"
+    },
+    {
+      "path": "materials/original/mira-research-report.pdf",
+      "bytes": 274231,
+      "sha256": "31953a20f76232d510111d32bbdfc6e11e3a79721837b8a75f9119f740e3af39"
+    },
+    {
+      "path": "materials/official-model-config.json",
+      "bytes": 1751,
+      "sha256": "a6ac3c2c4b5aa72370f9727f49ffa4432715d20061889acdb37c688be853096e"
+    },
+    {
+      "path": "materials/official-model-revision.json",
+      "bytes": 298,
+      "sha256": "068a61b23fe8be1fcb2b8e1d5f0798d6baf3b677495873a3a1722db5f2117997"
+    }
+  ],
+  "mira_download_status": "updated share MD and PDF successfully archived"
+}
